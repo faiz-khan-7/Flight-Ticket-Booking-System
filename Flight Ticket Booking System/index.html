@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Header and Menu Section-->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <section class="main-content container">
+        <div class="booking-form" id="booking-and-confirmation">
+            <!-- Booking input Form -->
+            <div id="booking-input">
+                <h3>Booking Flights</h3>
+                <div class="input-group">
+                    <label for="flying-from">Flying From</label>
+                    <input class="inp-style" id="flying-from" type="text" name="" placeholder="Enter a city" list="cities">
+                </div>
+                <div class="input-group">
+                    <label for="flying-to">Flying To</label>
+                    <input class="inp-style" id="flying-to" type="text" name="" placeholder="Enter a city" list="cities">
+                </div>
+                <div class="inputs">
+                    <div class="input-group">
+                        <label for="departure-date">Departure</label>
+                        <input class="inp-style" id="departure-date" type="date" name="" min="<?php echo date("Y-m-d"); ?>
+                    </div>
+                    <div class="input-group">
+                        <label for="return-date">Return</label>
+                        <input class="inp-style" id="return-date" type="date" name="" min="<?php echo date("Y-m-d"); ?>
+                    </div>
+
+                </div>
+
+                <label for="first-class-ticket-number">First Class ($150)</label>
+                <div class="input-group first-class">
+                    <div class="plus-minus-btn">
+                        <span id="first-class-minus" class="control">-</span>
+                    </div>
+                    <div>
+                        <input class="inp-style inp-width" type="text" name="" id="first-class-ticket-number" value="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <span id="first-class-plus" class="control">+</span>
+                    </div>
+                </div>
+
+                <label for="economy-class-ticket-number">Economy ($100)</label>
+                <div class="input-group economy-class">
+                    <div class="plus-minus-btn">
+                        <span id="economy-class-minus" class="control">-</span>
+                    </div>
+                    <div>
+                        <input class="inp-style inp-width" type="text" name="" id="economy-class-ticket-number" value="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <span id="economy-class-plus" class="control">+</span>
+                    </div>
+                </div>
+                <div class="calculations">
+                    <div class="amount">
+                        <div class="left">
+                            <p>Subtotal</p>
+                        </div>
+                        <div class="right">
+                            <p>$<span id="price-subtotal">0</span></p>
+                        </div>
+                    </div>
+
+                    <div class="amount">
+                        <div class="left">
+                            <p>Charge 10% VAT</p>
+                        </div>
+                        <div class="right">
+                            <p>$<span id="price-vat">0</span></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="amount">
+                        <div class="left">
+                            <h4>Total</h4>
+                        </div>
+                        <div class="right">
+                            <p>$<span id="price-total">0</span></p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-style" id="book-now-button">Book Now</button>
+            </div>
+
+            <!-- booking confirmation form -->
+            <div id="booking-confirmation">
+                <h2>Booking Confirmation Form</h2><br>
+                <p>Thanks for booking with <strong>Discovery Fly</strong>. Here is your booking information:</p><br>
+                <label for="confirmation-flying-from">Flying from</label>
+                <input type="text" id="confirmation-flying-from" placeholder="New Delhi, India">
+                <label for="confirmation-flying-to">Flying to</label>
+                <input type="text" id="confirmation-flying-to" placeholder="Mumbai, India">
+                <label for="confirmation-departure">Departure Date</label>
+                <input type="text" id="confirmation-departure" placeholder="31 January 2021">
+                <label for="confirmation-return">Return date</label>
+                <input type="text" id="confirmation-return" placeholder="32 January 2021">
+                <label for="confirmation-price-total">Total ticket cost($)</label>
+                <input type="number" id="confirmation-price-total" placeholder=0>
+                <button id="print-button" onclick="window.print()">Print this information</button>
+            </div>
+        </div>
+
+        <div class="booking-content">
+            <h1>discover <br> around the world</h1>
+            <p>Embark on your next adventure with ease. Our comprehensive booking service helps you explore the globe, offering seamless access to flights, exclusive deals, and top destinations. Experience the joy of travel without the hassle—book your tickets today and discover the wonders that await you around the world.</p>
+        </div>
+    </section>
+
+    <datalist id="cities">
+        <!-- Major cities with airports in India -->
+        <option value="New Delhi, India"></option>
+        <option value="Mumbai, India"></option>
+        <option value="Bengaluru, India"></option>
+        <option value="Hyderabad, India"></option>
+        <option value="Chennai, India"></option>
+        <option value="Kolkata, India"></option>
+        <option value="Ahmedabad, India"></option>
+        <option value="Pune, India"></option>
+        <option value="Jaipur, India"></option>
+        <option value="Goa, India"></option>
+        <option value="Lucknow, India"></option>
+        <option value="Trivandrum, India"></option>
+        <option value="Kochi, India"></option>
+        <option value="Nagpur, India"></option>
+        <option value="Indore, India"></option>
+        <option value="Bhopal, India"></option>
+        <option value="Coimbatore, India"></option>
+        <option value="Visakhapatnam, India"></option>
+        <option value="Chandigarh, India"></option>
+        <option value="Vadodara, India"></option>
+        <option value="Bangalore, India"></option>
+        <option value="Chandigarh, India"></option>
+        <option value="Cochin, India"></option>
+        <option value="Guwahati, India"></option>
+        <option value="Jaipur, India"></option>
+        <option value="Kolkata, India"></option>
+        <option value="Lucknow, India"></option>
+        <option value="Patna, India"></option>
+        <option value="Pune, India"></option>
+        <option value="Varanasi, India"></option>
+        <!-- Major cities with airports around the world -->
+        <option value="New York, USA"></option>
+        <option value="Los Angeles, USA"></option>
+        <option value="Chicago, USA"></option>
+        <option value="Miami, USA"></option>
+        <option value="London, UK"></option>
+        <option value="Paris, France"></option>
+        <option value="Berlin, Germany"></option>
+        <option value="Tokyo, Japan"></option>
+        <option value="Sydney, Australia"></option>
+        <option value="Toronto, Canada"></option>
+        <option value="Vancouver, Canada"></option>
+        <option value="Dubai, UAE"></option>
+        <option value="Singapore"></option>
+        <option value="Hong Kong"></option>
+        <option value="Barcelona, Spain"></option>
+        <option value="Istanbul, Turkey"></option>
+        <option value="Rome, Italy"></option>
+        <option value="Bangkok, Thailand"></option>
+        <option value="Seoul, South Korea"></option>
+        <option value="Cape Town, South Africa"></option>
+        <option value="Washington, USA"></option>
+        <option value="San Francisco, USA"></option>
+        <option value="Las Vegas, USA"></option>
+        <option value="Houston, USA"></option>
+        <option value="Boston, USA"></option>
+        <option value="Toronto, Canada"></option>
+        <option value="Vancouver, Canada"></option>
+        <option value="Montreal, Canada"></option>
+        <option value="Calgary, Canada"></option>
+        <option value="London, UK"></option>
+        <option value="Manchester, UK"></option>
+        <option value="Edinburgh, UK"></option>
+        <option value="Dublin, Ireland"></option>
+        <option value="Sydney, Australia"></option>
+        <option value="Melbourne, Australia"></option>
+        <option value="Brisbane, Australia"></option>
+        <option value="Perth, Australia"></option>
+        <option value="Auckland, New Zealand"></option>
+        <option value="Christchurch, New Zealand"></option>
+        <option value="Wellington, New Zealand"></option>
+    </datalist>
+
+    <!-- Script file -->
+    <script src="script.js"></script>
+    <!--Thank You-->
+</body>
+</html>
